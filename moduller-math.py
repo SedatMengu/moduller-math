@@ -1,93 +1,125 @@
 # modül nedir ? çok kullanılan fonksiyonların bir araya geldiği paketlere modül denir.
 
-import math                         # matematik işlemlerine ait moduldür. modülü komple çağırmak için kullanılır.
+# math modulu 
 
-sonuc = math.factorial(5)
-sonuc2 = math.sqrt(81)
-sonuc3 = math.fabs(-65)
-
-print(sonuc)                        # / 120 
-print(sonuc2)                       # / 9
-print(sonuc3)                       # / 65 
+# Python programlama dilinin standart kütüphanesinde bulunan bir matematiksel işlevler koleksiyonudur.
+# Bu modül, matematikle ilgili çeşitli hesaplamaları yapabilmek için bir dizi işlev ve sabit sağlar
 
 
-# eğer bütün modül yerine sadece bir veya birden fonksiynu yüklemek istersek
 
-from math import factorial , sqrt
+import math                               
 
-#eğer sadece bir fonksiyonu çağırdıysak fonksiyon kullanımı şu şekildedir.
+# bu import yönteminde module ait değişken , metot , fonksiyon vs kullanılacaksa başına mutlaka "math." getirmek gerekir.
 
-sonuc4 = factorial(3)              
-print(sonuc4)                        # / 6
+print(math.sqrt(64))   # / 8 
+# print(pi)               # / NameError: name 'pi' is not defined
+print(math.pi)          # / 3.141592653589793
 
-# modülü değilde bütün fonksiyonları çağırmak istersek : 
+
+from math import factorial , sqrt    
+
+# bu import yönteminde module ait belli başlı ( factoriel , sqrt) fonksiyonlar çağırıldığından sadece bu fonksiyonlar kullanılır. "math." kullanmaya gerek yoktur.
+
+print(factorial(5))     # / 120 
+print(sqrt(9))          # / 3   
+
 
 from math import *
 
-# modülü komple import etmediğimiz için math. kısmını kullanmadık.
+# # bu import yönteminde module ait değişken , metot , fonksiyon vs kullanılacaksa başına mutlaka "math." getirmek gerekmez.
 
-sonuc5 = sqrt(64)
-print(sonuc5)                       # / 8
 
-# kendi fonksiyonlarımızı hazırlayıp bir modül yapabiliriz. ,(javascript ekler gibi ekliyoruz)
-# uzun modül isimlerinden kurtulmak için 
+print(pow(2,3))     # / 8
+print(pi)           # / 3.141592653589793
 
-import modul-math as m        # modül ismini bu şekilde kısaltabiliriz.
-import modul-math             # modül ismini kısaltmadan bu şekilde de bırakabiliriz.
 
-sonuc6=m.cember_cevresi(6)
-print(sonuc6)                       # / 37.68
+# math modulu içerisinde tanımlı fonksiyonlar.
 
-# 1  - math.acos() fonksiyonu     :
-# 2  - math.acosh() fonksiyonu    :
-# 3  - math.asin() fonksiyonu     :
-# 4  - math.asinh() fonksiyonu    :
-# 5  - math.atan() fonksiyonu     :
-# 6  - math.atan2() fonksiyonu    :
-# 7  - math.atanh() fonksiyonu    :
-# 8  - math.ceil() fonksiyonu     :
-# 9  - math.comb() fonksiyonu     :
-# 10 - math.copysign() fonksiyonu :
-# 11 - math.cos fonksiyonu        :
-# 12 - math.cosh() fonksiyonu     :
-# 13 - math.degrees() fonksiyonu  :
-# 14 - math.dist() fonksiyonu     :
-# 15 - math.erf fonksiyonu        :
-# 16 - math.erfc fonksiyonu       :
-# 17 - math.exp fonksiyonu        :
-# 18 - math.expm1 fonksiyonu      :
-# 19 - math.fabs fonksiyonu       :
-# 20 - math.factorial fonksiyonu  :
-# 21 - math.floor fonksiyonu      :
-# 22 - math.fmod fonksiyonu       :
-# 23 - math.frexp fonksiyonu      :
-# 24 - math.fsum fonksiyonu       :
-# 25 - math.gamma fonksiyonu      :
-# 26 - math.gcd fonksiyonu        :
-# 27 - math.hypot fonksiyonu      :
-# 28 - math.isclose fonksiyonu    :
-# 29 - math.isfinite fonksiyonu   :
-# 30 - math.isinf fonksiyonu      :
-# 31 - math.isnan fonksiyonu      :
-# 32 - math.isqrt fonksiyonu      :
-# 33 - math.lcm fonksiyonu        :
-# 34 - math.ldexp fonksiyonu      :
-# 35 - math.lgamma fonksiyonu     :
-# 36 - math.log fonksiyonu        :
-# 37 - math.log10 fonksiyonu      :
-# 38 - math.log1p fonksiyonu      :
-# 39 - math.log2 fonksiyonu       :
-# 40 - math.modf fonksiyonu       :
-# 41 - math.nextafter fonksiyonu  :
-# 42 - math.perm fonksiyonu       :
-# 43 - math.pow fonksiyonu        :
-# 44 - math.prod fonksiyonu       :
-# 45 - math.radians fonksiyonu    :
-# 46 - math.remainder fonksiyonu  :
-# 47 - math.sin fonksiyonu        :
-# 48 - math.sinh fonksiyonu       :
-# 49 - math.sqrt fonksiyonu       :
-# 50 - math.tan fonksiyonu        :
-# 51 - math.tanh fonksiyonu       :
-# 52 - math.trunc fonksiyonu      :
-# 53 - math.ulp fonksiyonu        :
+
+# trigonometrik fonksiyonlar:
+
+#  - math.acos(x)                                         : Verilen bir sayının ters kosinüsünü döndürür.
+#  - math.acosh(x)                                        : Verilen bir sayının hiperbolik arkkosinüsünü döndürür.
+#  - math.asin(x)                                         : Verilen bir sayının ters sinüsünü döndürür.
+#  - math.asinh(x)                                        : Verilen bir sayının hiperbolik arksinüsünü döndürür.
+#  - math.atan(x)                                         : Verilen bir sayının ters tanjantını döndürür.
+#  - math.atan2(y, x)                                     : İki sayı arasındaki ters tanjantı döndürür. Y ve X koordinatlarını belirtir.
+#  - math.atanh(x)                                        : Verilen bir sayının hiperbolik artanjantını döndürür.
+#  - math.cos(x)                                          : Verilen bir sayının kosinüsünü döndürür.
+#  - math.cosh(x)                                         : Verilen bir sayının hiperbolik kosinüsünü döndürür.
+#  - math.sin(x)                                          : Verilen bir sayının sinüsünü döndürür.
+#  - math.sinh(x)                                         : Verilen bir sayının hiperbolik sinüsünü döndürür.
+#  - math.tan(x)                                          : Verilen bir sayının tanjantını döndürür.
+#  - math.tanh(x)                                         : Verilen bir sayının hiperbolik tanjantını döndürür.
+#  - math.degrees(x)                                      : Verilen bir açıyı derece cinsinden döndürür.
+#  - math.radians(x)                                      : Verilen bir açıyı radyan cinsinden döndürür.
+#  - math.hypot(x, y)                                     : İki dik kenarın uzunluğunu vererek hipotenüs uzunluğunu döndürür.
+
+# logaritmik fonksiyonlar:
+
+#  - math.exp(x)                                          : Verilen bir sayının e üzeri x (e^x) değerini döndürür.
+#  - math.expm1(x)                                        : Verilen bir sayının e üzeri x - 1 (e^x - 1) değerini döndürür.
+#  - math.log(x, base)                                    : Verilen bir sayının belirli bir tabanda logaritmasını döndürür.
+#  - math.log10(x)                                        : Verilen bir sayının 10 tabanındaki logaritmasını döndürür.
+#  - math.log1p(x)                                        : Verilen bir sayının 1 artı x değerinin logaritmasını döndürür.
+#  - math.log2(x)                                         : Verilen bir sayının 2 tabanındaki logaritmasını döndürür.
+#  - math.lgamma(x)                                       : Verilen bir sayının log-gamma fonksiyonunu döndürür.
+
+
+# aritmatik fonksiyonlar
+
+#  - math.copysign(x, y)                                  : Y değerinin işaretini X değerine kopyalar ve sonucu döndürür.
+#  - math.fabs(x)                                         : Verilen bir sayının mutlak değerini döndürür.
+print(math.fabs(-5))        # / 5
+#  - math.factorial(x)                                    : Verilen bir sayının faktöriyelini döndürür.
+print(math.factorial(5))    # / 120
+#  - math.fmod(x, y)                                      : X sayısının Y sayısına bölümünden kalanı döndürür.
+print(math.fmod(8,3))       # / 2
+#  - math.frexp(x)                                        : Verilen bir sayının katsayı ve üs bileşenlerini döndürür. ( mantissa sayısı , üstel sayı)
+print(math.frexp(9))        # / (0.5625, 4)
+#  - math.gamma(x)                                        : Verilen bir sayının gamma fonksiyonunu döndürür.
+#  - math.isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)    : İki sayının yakınlığını kontrol eder.
+#  - math.isfinite(x)                                     : Verilen bir sayının sonlu (finite) olup olmadığını kontrol eder.
+#  - math.isinf(x)                                        : Verilen bir sayının sonsuz (∞) olup olmadığını kontrol eder.
+#  - math.isnan(x)                                        : Verilen bir sayının NaN (Not a Number) olup olmadığını kontrol eder.
+#  - math.ldexp(x, i)                                     : X sayısını 2^i ile çarparak sonucu döndürür.
+#  - math.nextafter(x, y)                                 : X sayısının Y sayısından sonraki takip eden kayan nokta sayısını döndürür.
+#  - math.pow(x, y)                                       : X sayısının Y üssünü döndürür.
+print(math.pow(2,3))        # / 8
+
+
+# hata fonksiyonları
+
+#  - math.erf(x)                                          : Verilen bir sayının hata fonksiyonunu döndürür.
+#  - math.erfc(x)                                         : Verilen bir sayının tamamlanmış hata fonksiyonunu döndürür.
+
+
+# obeb fonksiyonları :
+
+#  - math.gcd(a, b)                                       : Verilen iki sayının en büyük ortak bölenini döndürür.
+print(math.gcd(3,6))        # / 3
+
+
+# karekök fonksiyonları :
+
+#  - math.sqrt(x)                                         : Verilen bir sayının karekökünü döndürür.
+print(math.sqrt(25))        # / 5
+
+
+# iterasyon fonksiyonları:
+
+#  - math.fsum(iterable)                                  : İterasyon yapılabilecek bir dizi veya iterable üzerinde hassas kayan nokta toplamını döndürür.
+#  - math.prod(iterable, *, start=1)                      : İterasyon yapılabilecek bir dizi veya iterable üzerinde elemanların çarpımını döndürür.
+
+
+# Yuvarlama fonksiyonları:
+
+#  - math.ceil(x)                                         : Verilen bir sayının en küçük tam sayıya yukarı yuvarlanmış halini döndürür.
+print(math.ceil(3.1))   # / 4
+#  - math.floor(x)                                        : Verilen bir sayının en büyük tam sayıya aşağı yuvarlanmış halini döndürür.
+print(math.floor(3.9))  # / 3
+#  - math.modf(x)                                         : Verilen bir sayının ondalık kısmını ve tamsayı kısmını ayrı ayrı döndürür.
+print(math.modf(3.25))  # / (0.25, 3.0)
+#  - math.trunc(x)                                        : Verilen bir sayının tamsayı kısmını döndürür.
+print(math.trunc(8.9))  # / 8
+
